@@ -7,14 +7,14 @@ def findcountdown(m, numberarray1):
     counter = 0
     if m not in numberarray1:
         return 0
-    for i in range(N):
-        if numberarray1[i] == m and i != N-1:
-            for j in range(1, m):
-                if numberarray1[i+j] == 1:
+    for l in range(N-K+1):
+        if numberarray1[l] == m:
+            repitition = 0
+            for j in range(1, K):
+                if numberarray1[l+j] == 1 and repitition == K-2:
                     counter += 1
-                    m = K
-                if numberarray1[i+j] == m-1:
-                    m -= 1
+                if numberarray1[l+j] == K-j:
+                    repitition += 1
 
     return counter
 
